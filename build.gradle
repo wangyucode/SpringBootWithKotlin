@@ -23,11 +23,11 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'cn.wycode'
-version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 
@@ -48,9 +48,11 @@ compileTestKotlin {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-web')
-    compile("io.springfox:springfox-swagger2:2.7.0") //Swagger JSON generate
+    compile "io.springfox:springfox-swagger2:2.9.0" //Swagger JSON generate
     runtime('com.h2database:h2')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
+    compile("org.jetbrains.kotlin:kotlin-reflect")
+    compile('com.fasterxml.jackson.module:jackson-module-kotlin')
 }
 
